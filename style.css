@@ -1,0 +1,12 @@
+.mt-5{
+     display: flex; 
+    justify-content: space-evenly; 
+   
+}
+.random-pull{
+    text-align: center;
+}
+h5.card-title {
+    display: flex;
+    justify-content: center;
+}
