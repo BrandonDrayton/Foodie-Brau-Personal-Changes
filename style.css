@@ -1,0 +1,83 @@
+.page-header {
+    background-color: rgb(22, 123, 169);
+    color: rgb(88, 96, 105);
+    border-bottom: 1px solid rgb(88, 96, 105);
+    box-shadow: 0 2px 5px rgb(88, 96, 105);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.primary-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin-right: 20px;
+    padding: 0;
+
+}
+
+.nav-links li {
+    margin: 0 15px
+}
+
+.beer-list {
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.2em;
+}
+
+.logo {
+    font-size: 2em;
+    display: flex;
+    align-items: flex-end;
+}
+
+.food-list {
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.2em;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgba(7, 7, 7, 0.7);
+    font-weight: 600;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+@media screen and (min-width: 320px) and (max-width: 510px) {
+    .logo {
+        font-size: 1.5em
+    }
+
+    .logo a {
+        text-align: center;
+        text-justify: auto;
+        white-space: nowrap
+    }
+
+    .beer-list {
+        font-size: .95em
+    }
+
+    .beer-list a {
+        text-align: center;
+    }
+
+    .food-list {
+        font-size: .95em;
+    }
+
+    .food-list a {
+        text-align: center;
+    }
+}
