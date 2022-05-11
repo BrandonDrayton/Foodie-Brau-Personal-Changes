@@ -238,8 +238,9 @@ body {
     height: 100%;
 }
 
-.beer-card-image img {
-    object-fit: cover;
+.beer-card-image img{
+    max-height: 225px;
+    object-fit: contain;
     width: 100%;
     height: 100%;
 }
