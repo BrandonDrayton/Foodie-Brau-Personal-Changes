@@ -1,10 +1,11 @@
-
+// function for submit button
 const selectForm = document.querySelector("#select-form");
 selectForm.addEventListener("submit", (e) => {
     e.preventDefault();
-    const abvSelect = document.querySelector("#abv-select").value
-    abvSelect.remove("-")
-    console.log(abvSelect)
+    const abv = document.querySelector("#abv-select").value
+    const abvSelect = abv.replaceAll("-", "")
+    if (abvselect[0] = 0) {
+    }
     const ibuSelect = document.querySelector("#ibu-select").value
     const colorSelector = document.querySelector("#color-select").value
     const selectorString = (`${abvSelect}&${ibuSelect}&${colorSelector}`)
@@ -15,7 +16,6 @@ selectForm.addEventListener("submit", (e) => {
 // ibu_gt
 // ibu_lt
 // fetch(`https://api.punkapi.com/v2/beers?{}`)
-
 // render beers function
 function renderBeers(beers) {
     const beerArray = beers.map((currentBeer) => {
@@ -55,3 +55,4 @@ fetch(`https://api.punkapi.com/v2/beers?ids=${randomArray.join('|')}`)
         console.log(beers)//confirms beers fetched from array numbers
         renderBeers(beers) // renders the returned beers to the .random-container
     })
+
