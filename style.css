@@ -1,3 +1,129 @@
+.page-header {
+    background-color: rgb(22, 123, 169);
+    color: rgb(88, 96, 105);
+    border-bottom: 1px solid rgb(88, 96, 105);
+    box-shadow: 0 2px 5px rgb(88, 96, 105);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 65%;
+    margin: 0 auto;
+}
+
+.logo {
+    max-width: 1em;
+    max-height: 1em;
+    border-radius: 3em;
+}
+
+.primary-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+
+}
+
+.nav-links li {
+    margin: 0 1em
+}
+
+.beer-list {
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.6em;
+}
+
+.left-image-container {
+    margin-right: .2em;
+}
+
+.right-image-container {
+    margin-left: .2em;
+}
+
+.foodie-brau {
+    font-size: 3em;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 5px 5px 0 #000;
+    padding-bottom: .6em;
+}
+
+.your-list {
+    display: flex;
+    align-items: flex-end;
+    font-size: 1.6em;
+}
+
+.nav-links li a {
+    display: flex;
+
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+@media screen and (min-width: 776px) and (max-width: 1090px) {
+    .foodie-brau {
+        font-size: 2.2em
+    }
+
+    .foodie-brau a {
+        text-align: center;
+        text-justify: auto;
+        white-space: nowrap
+    }
+
+}
+
+
+
+
+
+
+
+
+@media screen and (max-width: 775px) {
+    .page-header {
+        max-width: 100%
+    }
+
+    .foodie-brau {
+        font-size: 1.5em
+    }
+
+    .foodie-brau a {
+        text-align: center;
+        text-justify: auto;
+        white-space: nowrap
+    }
+
+    .beer-list {
+        font-size: .95em;
+    }
+
+    .beer-list a {
+        text-align: center;
+    }
+
+    .your-list {
+        font-size: .95em;
+    }
+
+    .your-list a {
+        text-align: center;
+    }
+}
 
 /* css tags for intro and form elements */
 /* .introduction-div{} */
