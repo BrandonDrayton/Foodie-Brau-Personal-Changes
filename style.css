@@ -1,0 +1,21 @@
+
+/* css tags for intro and form elements */
+/* .introduction-div{} */
+/* .intro{} */
+/* .beer-selector-div{} */
+/* .select-form{} */
+/* #abv-select{} */
+/* #ibu-select{} */
+/* #color-select{} */
+.light{
+    background-color: rgb(246, 244, 99);
+}
+.copper{
+    background-color: rgb(188, 106, 40);
+}
+.amber{
+    background-color: rgb(104, 32, 14);
+}
+.dark{
+    background-color: rgb(39, 4, 2);
+}
