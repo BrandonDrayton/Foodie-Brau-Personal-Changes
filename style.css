@@ -6,7 +6,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
+    max-width: 70%;
+    margin: 0 auto;
 }
 
 .primary-nav {
@@ -20,13 +21,12 @@
     display: flex;
     justify-content: center;
     list-style-type: none;
-    margin-right: 20px;
     padding: 0;
 
 }
 
 .nav-links li {
-    margin: 0 15px
+    margin: 0 1em
 }
 
 .beer-list {
@@ -36,12 +36,12 @@
 }
 
 .logo {
-    font-size: 2em;
+    font-size: 3em;
     display: flex;
     align-items: flex-end;
 }
 
-.food-list {
+.your-list {
     display: flex;
     align-items: flex-end;
     font-size: 1.2em;
@@ -54,7 +54,11 @@
     font-family: 'Gloria Hallelujah', cursive;
 }
 
-@media screen and (min-width: 320px) and (max-width: 510px) {
+@media screen and (max-width: 775px) {
+    .page-header {
+        max-width: 100%
+    }
+
     .logo {
         font-size: 1.5em
     }
@@ -66,18 +70,18 @@
     }
 
     .beer-list {
-        font-size: .95em
+        font-size: .95em;
     }
 
     .beer-list a {
         text-align: center;
     }
 
-    .food-list {
+    .your-list {
         font-size: .95em;
     }
 
-    .food-list a {
+    .your-list a {
         text-align: center;
     }
 }
