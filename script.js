@@ -1,5 +1,3 @@
-fetch(`https://api.punkapi.com/v2/beers?{}`)
-render beers function
 function renderBeers(beers) {
     const beerArray = beers.map((currentBeer) => {
         if (currentBeer.image_url == null) {
@@ -41,46 +39,46 @@ for (let i = 0; i < 6; i++) {
 fetch(`https://api.punkapi.com/v2/beers?ids=${randomArray.join('|')}`)
     .then(res => res.json())
     .then(beers => {
-        window.beers=beers
+        window.beers = beers
         console.log(beers)//confirms beers fetched from array numbers
         renderBeers(beers) // renders the returned beers to the .random-container
     })
 
 
-    // add to like list from thumb up button 
-document.addEventListener('click',function(e){
-    if(e.target.classList.contains('tmb-up')){
-    const beerID = e.target.dataset.id
-    console.log(beerID)
-    const beer = beers.find((beer) => {
-        return beer.id == beerID
-    })
-    saveToLikeList(beer)
+// add to like list from thumb up button 
+document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('tmb-up')) {
+        const beerID = e.target.dataset.id
+        console.log(beerID)
+        const beer = beers.find((beer) => {
+            return beer.id == beerID
+        })
+        saveToLikeList(beer)
     }
 })
 function saveToLikeList(beerID) {
     let beerListJSON = localStorage.getItem('beerList')
     let beerList = JSON.parse(beerListJSON)
     if (!beerList) {
-        beerList = [] 
+        beerList = []
     }
     beerList.push(beerID)
     beerListJSON = JSON.stringify(beerList)
     localStorage.setItem('beerList', beerListJSON)
 }
 
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     if (e.target.classList.contains('tmb-down')) {
         const removeRandom = e.target.dataset.idn
         console.log(removeRandom)
-        beerList=beerList.filter(function(beer){
-            if (removeRandom == beer.id){
+        beerList = beerList.filter(function (beer) {
+            if (removeRandom == beer.id) {
                 return false
             }
             else {
                 return true
             }
-            
+
         })
         beerListJSON = JSON.stringify(beerList)
         localStorage.setItem('beerList', beerListJSON)
