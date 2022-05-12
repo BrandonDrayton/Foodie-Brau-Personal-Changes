@@ -35,5 +35,24 @@ selectForm.addEventListener("submit", (e) => {
     const ebc_lt = ebcSelector(ebc)[1]
 
     const selectorString = (`https://api.punkapi.com/v2/beers?=abv_gt=${abv_gt}&abv_lt=${abv_lt}&ibu_gt=${ibu_gt}&ibu_lt=${ibu_lt}&ebc_gt=${ebc_gt}&ebc_lt=${ebc_lt}`)
-    console.log(selectorString)
+    fetch(`https://api.punkapi.com/v2/beers?=${selectorString}`)
+        .then(response => response.json())
+        .then(beers => {
+            window.beers = beers
+            console.log(beers)
+            renderBeers(beers)
+        })
+})
+const searchForm = document.querySelector('#search-form');
+searchForm.addEventListener('submit', function (e) {
+    e.preventDefault()
+    const searchString = document.querySelector('#search-bar').value
+    const urlEncodedSearchString = encodeURIComponent(searchString)
+    fetch(`https://api.punkapi.com/v2/beers?beer_name=${urlEncodedSearchString}`)
+        .then(response => response.json())
+        .then(beers => {
+            searchForm.reset()
+            console.log(beers)
+            renderBeers(beers)
+        })
 })
