@@ -1,10 +1,14 @@
+
+let excludeList = JSON.parse(localStorage.getItem('excludeList')) ?? []
+
+
 function renderBeers(beers) {
     const beerArray = beers.map((currentBeer) => {
         if (currentBeer.image_url == null) {
             currentBeer.image_url = 'https://images.punkapi.com/v2/192.png'
         }
         return `
-        <div class="card mb-3 beer-card" style="max-width: 540px;">
+        <div class="card mb-3 beer-card" style="max-width: 540px;" id="beer-card-${currentBeer.id}">
             <div class="row g-0 card-entire-content">
                 <div class="col-md-4">
                     <div class="beer-card-image">
@@ -27,13 +31,29 @@ function renderBeers(beers) {
             </div>
         </div>`
     });
+    
     const results = document.querySelector('.random-container');
     results.innerHTML = beerArray.join('');
+    
 }
+
 //creates 6 random numbers between 1-325 for initial random fetch
+function getLeftOverId(excludeArray){
+    const max = 325
+    const num = Math.floor(Math.random() * max) + 1
+    if (excludeArray.length >= max){
+        return 0
+    }
+    if (excludeArray.includes(num.toString())){
+        return getLeftOverId(excludeArray)
+    }else{
+        return num
+    }
+}
 const randomArray = []
 for (let i = 0; i < 6; i++) {
-    randomArray[i] = Math.floor(Math.random() * 325) + 1
+    randomArray[i] = getLeftOverId(randomArray.concat(excludeList))
+
 }
 
 fetch(`https://api.punkapi.com/v2/beers?ids=${randomArray.join('|')}`)
@@ -67,23 +87,21 @@ function saveToLikeList(beerID) {
     localStorage.setItem('beerList', beerListJSON)
 }
 
-document.addEventListener('click', function (e) {
+
+
+
+document.addEventListener('click', function(e) {
     if (e.target.classList.contains('tmb-down')) {
         const removeRandom = e.target.dataset.idn
         console.log(removeRandom)
-        beerList = beerList.filter(function (beer) {
-            if (removeRandom == beer.id) {
-                return false
-            }
-            else {
-                return true
-            }
+        if (!excludeList.includes(removeRandom)){
+            excludeList.push(removeRandom)
+        }
+        console.log(excludeList)
+        excludeListJSON = JSON.stringify(excludeList)
+        localStorage.setItem('excludeList', excludeListJSON)
+        document.querySelector(`#beer-card-${removeRandom}`).remove()
 
-        })
-        beerListJSON = JSON.stringify(beerList)
-        localStorage.setItem('beerList', beerListJSON)
-        renderBeers(beerList)
     }
 })
-
 
