@@ -170,21 +170,20 @@
 
 .centered-title {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    /* max-width: 140px;   needs to be used if line break isn't used for thumbs up and down */
 }
 
 body {
 
-    background-color: rgb(22, 123, 169);
-    border: 5px;
-    border-style: dotted;
-    border-color: chartreuse;
+    background-color: #25274D;
+    
 }
 
 .card {
-    background-color: transparent;
-    border: none;
-    color: white
+    /* background-color: transparent; */
+    /* border: none; */
+    /* color: white */
 }
 
 .tmb-up {
@@ -194,6 +193,10 @@ body {
 .tmb-down {
     display: flex;
 }
+/* card-text{
+    overflow-y: scroll;
+    overflow-x: hidden;
+} */
 
 @media screen and (min-width: 50rem) {
     #main {
@@ -215,8 +218,10 @@ body {
     }
 
     .beer-card {
+        background-color: #29648A;
         min-height: 225px;
         padding-left: 0;
+        color: white;
     }
 
     .card-entire-content {
@@ -231,7 +236,9 @@ body {
 }
 
 .card-body {
-    height: 150px;
+    height: 14em;
+    overflow: scroll;
+    overflow-x: hidden;
 }
 
 .beer-card-image {
