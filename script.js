@@ -19,6 +19,9 @@ selectForm.addEventListener("submit", (e) => {
 // render beers function
 function renderBeers(beers) {
     const beerArray = beers.map((currentBeer) => {
+        if (currentBeer.image_url == null) {
+            currentBeer.image_url = 'https://images.punkapi.com/v2/192.png'
+        }
         return `
         <div class="card mb-3 beer-card" style="max-width: 540px;">
             <div class="row g-0 card-entire-content">
