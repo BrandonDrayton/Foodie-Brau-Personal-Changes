@@ -258,3 +258,16 @@ body {
     width: 100%;
     height: 100%;
 }
+
+/* pairing css selector  */
+.clicked-beer-fl{}
+.beer-image-fl{}
+.clicked-beer-details-fl{}
+.beer-name-fl{}
+.abv-ibu-ebc-fl{}
+.description-fl{}
+.hops-malts-fl{}
+.hops-li-fl{}
+.malt-fl{}
+.malt-li-fl{}
+.render-recipes-container-fl{}
