@@ -1,5 +1,8 @@
 function renderBeers(beers) {
     const beerArray = beers.map(function (currentBeer) {
+        if (currentBeer.image_url == null) {
+            currentBeer.image_url = 'https://images.punkapi.com/v2/192.png'
+        }
         return `
         <div class="card mb-3 beer-card" style="max-width: 540px;">
             <div class="row g-0 card-entire-content">
@@ -31,21 +34,21 @@ let beerListJSON = localStorage.getItem('beerList')
 let beerList = JSON.parse(beerListJSON)
 renderBeers(beerList)
 
-    document.addEventListener('click', function(e) {
-        if (e.target.classList.contains('tmb-down')) {
-            const removeFromLike = e.target.dataset.idn
-            // console.log(removeFromLike)
-            beerList=beerList.filter(function(beer){
-                if (removeFromLike == beer.id){
-                    return false
-                }
-                else {
-                    return true
-                }
-                
-            })
-            beerListJSON = JSON.stringify(beerList)
-            localStorage.setItem('beerList', beerListJSON)
-            renderBeers(beerList)
-        }
-    })
+document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('tmb-down')) {
+        const removeFromLike = e.target.dataset.idn
+        // console.log(removeFromLike)
+        beerList = beerList.filter(function (beer) {
+            if (removeFromLike == beer.id) {
+                return false
+            }
+            else {
+                return true
+            }
+
+        })
+        beerListJSON = JSON.stringify(beerList)
+        localStorage.setItem('beerList', beerListJSON)
+        renderBeers(beerList)
+    }
+})

@@ -43,7 +43,7 @@ selectForm.addEventListener("submit", (e) => {
             renderBeers(beers)
         })
 })
-const searchForm = document.querySelector('#search-form');
+const searchForm = document.querySelector('#search-form')
 searchForm.addEventListener('submit', function (e) {
     e.preventDefault()
     const searchString = document.querySelector('#search-bar').value
@@ -51,8 +51,13 @@ searchForm.addEventListener('submit', function (e) {
     fetch(`https://api.punkapi.com/v2/beers?beer_name=${urlEncodedSearchString}`)
         .then(response => response.json())
         .then(beers => {
+            window.beers = beers
+            let beerListJSON = localStorage.getItem('beerList')
+            let beerList = JSON.parse(beerListJSON)
+            let excludeListJSON = localStorage.getItem("excludeList")
+            let excludeList = JSON.parse(excludeListJSON)
+            renderBeers(result)
             searchForm.reset()
-            console.log(beers)
-            renderBeers(beers)
         })
 })
+
