@@ -61,9 +61,8 @@ fetch(`https://api.punkapi.com/v2/beers?ids=${randomArray.join('|')}`)
     .then(res => res.json())
     .then(beers => {
         window.beers = beers
-        console.log(beers)//confirms beers fetched from array numbers
         renderBeers(beers) // renders the returned beers to the .random-container
-        
+
     })
 
 

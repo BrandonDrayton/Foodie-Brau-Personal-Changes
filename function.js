@@ -56,7 +56,7 @@ searchForm.addEventListener('submit', function (e) {
             let beerList = JSON.parse(beerListJSON)
             let excludeListJSON = localStorage.getItem("excludeList")
             let excludeList = JSON.parse(excludeListJSON)
-            renderBeers(result)
+            renderBeers(beers)
             searchForm.reset()
         })
 })

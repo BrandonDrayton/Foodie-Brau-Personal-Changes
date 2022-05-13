@@ -1,9 +1,9 @@
 
-
 function renderFoodListBeer(beerID) {
     fetch(`https://api.punkapi.com/v2/beers?ids=${beerID}`)
         .then(res => res.json())
         .then(beer => {
+            console.log(beer)
             const hopArray = []
             const maltArray = []
             const foodParingArray = []
@@ -77,8 +77,12 @@ function renderRecipes(foodArray) {
         recipeResults.innerHTML = recipeHTML
     });
 }
+
+
+
+let excludedArray = JSON.parse(localStorage.getItem("excludeList")) ?? []
 const params = new URLSearchParams(window.location.search)
-const beerID = params.get("beerid")
+const beerID = params.get("beerid") ?? getLeftOverId(excludedArray)
 renderFoodListBeer(beerID)
 
 
