@@ -15,7 +15,7 @@ function renderBeers(beers) {
                     <div class="card-body">
                     <br>
                     <div class="thumbs-up-down">
-                        <a href="#" class="btn removeFromLike-x" data-idx=${currentBeer.id}>❌</a>
+                        <a href="#" class="btn removeFromLike-x" data-idx="${currentBeer.id}">❌</a>
                         </div>
                         <h5 class="card-title centered-title">${currentBeer.name}</h5>
                         
@@ -27,6 +27,7 @@ function renderBeers(beers) {
         </div>
 
         `
+
 
     });
     const results = document.querySelector('.random-container');
@@ -56,4 +57,12 @@ renderBeers(beerList)
 
         }
     })
+
+
+    document.addEventListener('click', function(e) {
+        if (e.target.classList.contains('clear-from-liked')) {
+            localStorage.clear('beerList')
+        }
+    })
+
 
