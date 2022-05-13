@@ -1,4 +1,4 @@
-const foodParingArray = []
+
 
 function renderFoodListBeer(beerID) {
     fetch(`https://api.punkapi.com/v2/beers?ids=${beerID}`)
@@ -6,6 +6,7 @@ function renderFoodListBeer(beerID) {
         .then(beer => {
             const hopArray = []
             const maltArray = []
+            const foodParingArray = []
             for (i = 0; i < beer[0].food_pairing.length; i++) {
                 foodParingArray[i] = beer[0].food_pairing[i]
                 console.log(foodParingArray)
@@ -43,12 +44,13 @@ function renderFoodListBeer(beerID) {
 
 }
 function renderRecipes(foodArray) {
-    const recipeCardArray = []
+    const recipeFetches = []
     for (i = 0; i < foodArray.length; i++) {
         let foodItemHTML = encodeURIComponent(foodArray[i])
-        fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${foodItemHTML}&app_id=6ece2007&app_key=3c7d449f40731c089916a859042d8c9d`)
+        const foodPromise = fetch(`https://api.edamam.com/api/recipes/v2?type=public&q=${foodItemHTML}&app_id=6ece2007&app_key=3c7d449f40731c089916a859042d8c9d`)
             .then(res => res.json())
             .then(food => {
+                const recipeCardArray = []
                 for (i = 0; i < food.hits.length && i < 5; i++) {
                     recipeCardArray.push(
                         `<div class="card mb-3" style="max-width: 540px;">
@@ -59,23 +61,26 @@ function renderRecipes(foodArray) {
                                 <div class="col-md-8">
                                     <div class="card-body">
                                         <h5 class="card-title">${food.hits[i].recipe.label}</h5>
-                                        <a class="btn btn-primary btn-large" href="#${food.hits[i].recipe.url} role="button">Get Recipe/a>
+                                        <a target="_blank" class="btn btn-primary btn-large" href="${food.hits[i].recipe.url}" role="button">Get Recipe</a>
                                     </div>
                                 </div>
                             </div>
                         </div>`)
                 }
+                return recipeCardArray
             })
+        recipeFetches.push(foodPromise)
     }
-    const recipeResults = document.querySelector('.render-recipes-container-fl')
-
-    recipeResults.innerHTML = recipeCardArray.join('')
-    console.log(recipeCardArray)
+    Promise.all(recipeFetches).then((results) => {
+        const recipeHTML = results.map((result) => result.join('')).join('')
+        const recipeResults = document.querySelector('.render-recipes-container-fl')
+        recipeResults.innerHTML = recipeHTML
+    });
 }
 const params = new URLSearchParams(window.location.search)
 const beerID = params.get("beerid")
 renderFoodListBeer(beerID)
-renderRecipes(foodParingArray)
+
 
 
 
