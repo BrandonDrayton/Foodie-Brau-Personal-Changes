@@ -32,22 +32,22 @@ function renderBeers(beers) {
             </div>
         </div>`
     });
-    
+
     const results = document.querySelector('.random-container');
     results.innerHTML = beerArray.join('');
-    
+
 }
 
 //creates 6 random numbers between 1-325 for initial random fetch
-function getLeftOverId(excludeArray){
+function getLeftOverId(excludeArray) {
     const max = 325
     const num = Math.floor(Math.random() * max) + 1
-    if (excludeArray.length >= max){
+    if (excludeArray.length >= max) {
         return 0
     }
-    if (excludeArray.includes(num.toString())){
+    if (excludeArray.includes(num.toString())) {
         return getLeftOverId(excludeArray)
-    }else{
+    } else {
         return num
     }
 }
@@ -75,6 +75,8 @@ document.addEventListener('click', function (e) {
         const beer = beers.find((beer) => {
             return beer.id == beerID
         })
+
+        console.log(beerID)
         saveToLikeList(beer)
     }
 })
@@ -85,18 +87,19 @@ function saveToLikeList(beerID) {
     if (!beerList) {
         beerList = []
     }
+    for (let i = beerList.length; i--;) {
+        if (beerList[i] === null) beerList.splice(i, 1)
+    }
     beerList.push(beerID)
     beerListJSON = JSON.stringify(beerList)
     localStorage.setItem('beerList', beerListJSON)
 }
 
-
-
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     if (e.target.classList.contains('tmb-down')) {
         const removeRandom = e.target.dataset.idn
         console.log(removeRandom)
-        if (!excludeList.includes(removeRandom)){
+        if (!excludeList.includes(removeRandom)) {
             excludeList.push(removeRandom)
         }
         console.log(excludeList)
@@ -106,30 +109,5 @@ document.addEventListener('click', function(e) {
 
     }
 })
-
-
-// document.addEventListener('click', function (e) {
-// if (e.target.classList.contains('pair-with')) {
-//         e.preventDefault()
-//         const beerCardImg = e.target.dataset.pairwith
-//         console.log(beerCardImg)
-//         const foodPairing = beers.find((beer) => {
-//             return beer.id == beerCardImg
-//         })
-//         saveToPairsWith(foodPairing)
-//     }
-// })
-// function saveToPairsWith(beerCardImg) {
-//     let pairsWithJSON = localStorage.getItem('pairsWith')
-//     let pairsWith = JSON.parse(pairsWithJSON)
-
-//     if (!pairsWith) {
-//         pairsWith = []
-//     }
-//     pairsWith.push(beerCardImg)
-//     pairsWithJSON = JSON.stringify(pairsWith)
-//     localStorage.setItem('pairsWith', pairsWithJSON)
-
-// }
 
 

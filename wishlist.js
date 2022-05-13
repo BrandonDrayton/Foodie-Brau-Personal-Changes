@@ -56,3 +56,4 @@ renderBeers(beerList)
 
         }
     })
+
