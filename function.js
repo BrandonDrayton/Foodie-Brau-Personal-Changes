@@ -38,12 +38,11 @@ selectForm.addEventListener("submit", (e) => {
     fetch(`https://api.punkapi.com/v2/beers?=${selectorString}`)
         .then(response => response.json())
         .then(beers => {
-            window.beers = beers
             console.log(beers)
             renderBeers(beers)
         })
 })
-const searchForm = document.querySelector('#search-form');
+const searchForm = document.querySelector('#search-form')
 searchForm.addEventListener('submit', function (e) {
     e.preventDefault()
     const searchString = document.querySelector('#search-bar').value
@@ -52,7 +51,44 @@ searchForm.addEventListener('submit', function (e) {
         .then(response => response.json())
         .then(beers => {
             searchForm.reset()
+            let beerListJSON = localStorage.getItem('beerList')
+            let beerList = JSON.parse(beerListJSON)
+            let excludeListJSON = localStorage.getItem("excludeList")
+            let excludeList = JSON.parse(excludeListJSON)
             console.log(beers)
+            if (beerList === null) {
+                renderBeers(beers)
+            }
             renderBeers(beers)
+            document.addEventListener('click', function (e) {
+                if (e.target.classList.contains('tmb-up')) {
+                    const beerID = e.target.dataset.id
+                    console.log(beerID)
+                    const beer = beers.find((beer) => {
+                        return beer.id == beerID
+                    })
+                    console.log(beerID)
+                    saveToLikeList(beer)
+                }
+            })
         })
 })
+
+
+
+
+
+
+
+
+
+    //     if (excludeList === null) {
+    //         renderBeers(beers)
+    //     }
+    //     else {
+    //         console.log(beerList)
+    //         console.log(excludeList)
+    //         let results = beerList.filter(beer => beer && !excludeList.includes(beer.id))
+    //         console.log(results)
+    //     }
+    // })
