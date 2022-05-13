@@ -60,4 +60,3 @@ searchForm.addEventListener('submit', function (e) {
             searchForm.reset()
         })
 })
-
