@@ -11,17 +11,18 @@ function renderBeers(beers) {
         <div class="card mb-3 beer-card" style="max-width: 540px;" id="beer-card-${currentBeer.id}">
             <div class="row g-0 card-entire-content">
                 <div class="col-md-4">
-                    <div class="beer-card-image">
+                    <div class="beer-card-image" >
                         <img src="${currentBeer.image_url}"class="img-fluid rounded-start" alt="...">
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-                    <br>
+                    <a href="./foodlist.html?beerid=${currentBeer.id}" class="btn btn-primary pair-with" data-pairwith=${currentBeer.id}> Pairs With</a>
                     <div class="thumbs-up-down">
                             <a href="#" class="btn tmb-up" data-id=${currentBeer.id}>👍</a>
                             <a href="#" class="btn tmb-down" data-idn=${currentBeer.id}>👎</a>
                         </div>
+                        <br>
                         <h5 class="card-title centered-title">${currentBeer.name}</h5>
                         
                         <p class="card-text">${currentBeer.description}</p>
@@ -62,6 +63,7 @@ fetch(`https://api.punkapi.com/v2/beers?ids=${randomArray.join('|')}`)
         window.beers = beers
         console.log(beers)//confirms beers fetched from array numbers
         renderBeers(beers) // renders the returned beers to the .random-container
+        
     })
 
 
@@ -76,6 +78,7 @@ document.addEventListener('click', function (e) {
         saveToLikeList(beer)
     }
 })
+
 function saveToLikeList(beerID) {
     let beerListJSON = localStorage.getItem('beerList')
     let beerList = JSON.parse(beerListJSON)
@@ -86,7 +89,6 @@ function saveToLikeList(beerID) {
     beerListJSON = JSON.stringify(beerList)
     localStorage.setItem('beerList', beerListJSON)
 }
-
 
 
 
@@ -104,4 +106,30 @@ document.addEventListener('click', function(e) {
 
     }
 })
+
+
+// document.addEventListener('click', function (e) {
+// if (e.target.classList.contains('pair-with')) {
+//         e.preventDefault()
+//         const beerCardImg = e.target.dataset.pairwith
+//         console.log(beerCardImg)
+//         const foodPairing = beers.find((beer) => {
+//             return beer.id == beerCardImg
+//         })
+//         saveToPairsWith(foodPairing)
+//     }
+// })
+// function saveToPairsWith(beerCardImg) {
+//     let pairsWithJSON = localStorage.getItem('pairsWith')
+//     let pairsWith = JSON.parse(pairsWithJSON)
+
+//     if (!pairsWith) {
+//         pairsWith = []
+//     }
+//     pairsWith.push(beerCardImg)
+//     pairsWithJSON = JSON.stringify(pairsWith)
+//     localStorage.setItem('pairsWith', pairsWithJSON)
+
+// }
+
 

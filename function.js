@@ -51,8 +51,9 @@ searchForm.addEventListener('submit', function (e) {
     fetch(`https://api.punkapi.com/v2/beers?beer_name=${urlEncodedSearchString}`)
         .then(response => response.json())
         .then(beers => {
-            searchForm.reset()
+            window.beers = beers
             console.log(beers)
             renderBeers(beers)
+            searchForm.reset()
         })
 })
