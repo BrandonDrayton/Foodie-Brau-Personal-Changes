@@ -53,15 +53,15 @@ function renderRecipes(foodArray) {
                 const recipeCardArray = []
                 for (i = 0; i < food.hits.length && i < 5; i++) {
                     recipeCardArray.push(
-                        `<div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="${food.hits[i].recipe.image}" class="img-fluid rounded-start" alt="...">
+                        `<div class="card-fl mb-3" style="max-width: 540px;">
+                            <div class="card-row-fl row g-0">
+                                <div class="card-img-container-fl col-md-4">
+                                    <img src="${food.hits[i].recipe.image}" class="card-img-fl img-fluid rounded-start" alt="...">
                                 </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">${food.hits[i].recipe.label}</h5>
-                                        <a target="_blank" class="btn btn-primary btn-large" href="${food.hits[i].recipe.url}" role="button">Get Recipe</a>
+                                <div class="card-body-col-fl col-md-8">
+                                    <div class="card-body-fl card-body">
+                                        <h5 class="card-title-fl card-title">${food.hits[i].recipe.label}</h5>
+                                        <a target="_blank" class="card-link-button-fl btn btn-primary btn-large" href="${food.hits[i].recipe.url}" role="button">Get Recipe</a>
                                     </div>
                                 </div>
                             </div>
