@@ -19,7 +19,7 @@ function renderBeers(beers) {
                     <div class="card-body">
                     <a href="./pairing.html?beerid=${currentBeer.id}" class="btn btn-primary pair-with" data-pairwith=${currentBeer.id}> Pairs With</a>
                     <div class="thumbs-up-down">
-                            <a href="#" class="btn tmb-up" data-id=${currentBeer.id}>👍</a>
+                            <a href="#" class="btn tmb-up" data-id=${currentBeer.id}>👍</a>  
                             <a href="#" class="btn tmb-down" data-idn=${currentBeer.id}>👎</a>
                         </div>
                         <br>
@@ -61,7 +61,6 @@ fetch(`https://api.punkapi.com/v2/beers?ids=${randomArray.join('|')}`)
     .then(res => res.json())
     .then(beers => {
         window.beers = beers
-        console.log(beers)//confirms beers fetched from array numbers
         renderBeers(beers) // renders the returned beers to the .random-container
 
     })
@@ -109,5 +108,6 @@ document.addEventListener('click', function (e) {
 
     }
 })
+
 
 
