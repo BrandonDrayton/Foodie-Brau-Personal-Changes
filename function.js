@@ -54,9 +54,13 @@ searchForm.addEventListener('submit', function (e) {
             window.beers = beers
             let beerListJSON = localStorage.getItem('beerList')
             let beerList = JSON.parse(beerListJSON)
-            let excludeListJSON = localStorage.getItem("excludeList")
-            let excludeList = JSON.parse(excludeListJSON)
-            renderBeers(result)
+            let excludeList = JSON.parse(localStorage.getItem('excludeList'))
             searchForm.reset()
+            // console.log(beers)
+            // console.log(excludeList)
+            // let result = beers.filter((beer) => excludeList.includes(beer))
+            // console.log(result)
+            renderBeers(beers)
+
         })
 })
