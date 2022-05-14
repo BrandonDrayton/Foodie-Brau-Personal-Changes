@@ -16,10 +16,10 @@ function renderBeers(beers) {
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="card-body">
+                    <div class="card-body card-body-landing">
                     <a href="./pairing.html?beerid=${currentBeer.id}" class="btn btn-primary pair-with" data-pairwith=${currentBeer.id}> Pairs With</a>
                     <div class="thumbs-up-down">
-                            <a href="#" class="btn tmb-up" data-id=${currentBeer.id}>👍</a>  
+                            <a href="javascript:void()" class="btn tmb-up" data-id=${currentBeer.id}>👍</a>  
                             <a href="#" class="btn tmb-down" data-idn=${currentBeer.id}>👎</a>
                         </div>
                         <br>

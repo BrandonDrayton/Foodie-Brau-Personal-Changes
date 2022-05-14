@@ -42,6 +42,8 @@ selectForm.addEventListener("submit", (e) => {
             console.log(beers)
             renderBeers(beers)
         })
+        newHeader.innerText = `Here's your Beers!!`
+
 })
 
 const newHeader = document.querySelector('.random-pull')

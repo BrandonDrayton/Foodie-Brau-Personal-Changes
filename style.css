@@ -1,3 +1,9 @@
+body {
+    background-color: #25274D;
+}
+
+/* begin page header */
+
 .page-header {
     background-color: rgb(22, 123, 169);
     color: rgb(22, 123, 169);
@@ -8,6 +14,7 @@
     justify-content: center;
     max-width: 65%;
     margin: 0 auto;
+    margin-top: 3em;
 }
 
 .logo {
@@ -73,7 +80,11 @@
     font-family: 'Gloria Hallelujah', cursive;
 }
 
-@media screen and (min-width: 776px) and (max-width: 1090px) {
+/* ending of page header */
+
+/* Might delete 87-97, need to talk with brandon :first */
+
+ /* @media screen and (min-width: 776px) and (max-width: 1090px) {
     .foodie-brau {
         font-size: 2.2em
     }
@@ -84,7 +95,7 @@
         white-space: nowrap
     }
 
-}
+}  */
 
 @media screen and (max-width: 775px) {
     .page-header {
@@ -117,21 +128,39 @@
         text-align: center;
     }
 }
+/* line 130 closing tag for media q */
 
 /* css tags for intro and form elements */
-.introduction-div {}
 
-*/ .intro {}
+.introduction-div {
+    display: flex;
+    justify-content: center;
+}
 
-*/ .beer-selector-div {}
+.intro {
+    color: #AAABB8;
+    font-size: 20px;
+    width: 85%;
+    margin-top: 2em;
+    font-family: 'Gloria Hallelujah', cursive;
+}
 
-*/ .select-form {}
+.beer-selector-div {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+    margin-top: 3em;
+    margin-bottom: 3em;
+} 
 
-*/ #abv-select {}
 
-*/ #ibu-select {}
+.select-form {}
 
-*/ #color-select {}
+#abv-select {}
+
+#ibu-select {}
+
+#color-select {}
 
 
 .light {
@@ -151,7 +180,7 @@
 }
 
 
-
+/* 
 .random-container {
     display: flex;
     justify-content: space-evenly;
@@ -172,19 +201,6 @@
 .centered-title {
     display: flex;
     justify-content: center;
-    /* max-width: 140px;   needs to be used if line break isn't used for thumbs up and down */
-}
-
-body {
-
-    background-color: #25274D;
-    
-}
-
-.card {
-    /* background-color: transparent; */
-    /* border: none; */
-    /* color: white */
 }
 
 .tmb-up {
@@ -193,23 +209,22 @@ body {
 
 .tmb-down {
     display: flex;
-}
-/* card-text{
-    overflow-y: scroll;
-    overflow-x: hidden;
 } */
+
+
+/* changed min rem from 50 down to 5, bad idea, leave it at 50*/
 
 @media screen and (min-width: 50rem) {
     #main {
-        /* width: 100%; */
-        height: 1500px;
-        border: 2px;
+        height: fit-content;
+        border: 3px;
         border-style: solid;
-        border-color: rgb(242, 246, 42);
-        box-shadow: 2px 3px 5px 10px #3845f6;
-        margin-left: 95px;
-        margin-right: 95px;
-        margin-bottom: 125px;
+        border-color: #AAABB8;
+        box-shadow: 2px 3px 5px 10px #464866;
+        margin-left: 80px;
+        margin-right: 80px;
+        margin-bottom: 150px;
+        padding-bottom: 5em;
     }
 
     .thumbs-up-down {
@@ -219,8 +234,8 @@ body {
     }
 
     .beer-card {
-        background-color: #29648A;
-        min-height: 225px;
+        background-color: #2E9CCA;
+        min-height: 250px;
         padding-left: 0;
         color: white;
     }
@@ -229,20 +244,17 @@ body {
         min-height: 225px;
         height: 100%;
     }
-}
+ /* }    testing media q */
 .btn-primary {
-    color: #fff;
-    background-color: #AAABB8;
-    border-color: #0d6efd;
+    color: beige;
+    font-family: 'Gloria Hallelujah', cursive;
+    background-color: #464866;
+    border-color: #464866;
     width: fit-content;
 }
 
 
-.mb-3 {
-    height: 225px;
-}
-
-.card-body {
+.card-body-landing {
     height: 14em;
     overflow: scroll;
     overflow-x: hidden;
@@ -250,6 +262,8 @@ body {
 
 .beer-card-image {
     height: 100%;
+    padding-top: 10px;
+
 }
 
 .beer-card-image img{
@@ -259,10 +273,65 @@ body {
     height: 100%;
 }
 
-/* pairing css selector  */
-.clicked-beer-fl{}
-.beer-image-fl{}
-.clicked-beer-details-fl{}
+.random-container {
+    display: flex;
+    justify-content: space-evenly;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.random-pull {
+    text-align: center;
+    color: #AAABB8;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 27px;
+}
+.up-and-down-help {
+    text-align: center;
+    color: #AAABB8;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 27px;
+}
+
+.centered-title {
+    display: flex;
+    justify-content: center;
+    color: #000;
+}
+
+.tmb-up {
+    display: flex;
+}
+
+.tmb-down {
+    display: flex;
+}
+p.card-text {
+    color: black;
+}
+
+
+
+
+}
+
+/* pairing css selector this is all for the pairings page, all the media q seems to function fine */
+.clicked-beer-fl{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.beer-card-rec{
+    width: 40rem;
+    align-items: center;
+    background-color: #2E9CCA;
+    flex-direction: row;
+}
+.beer-image-fl{
+    width: 8em;
+}
+.clicked-beer-details-fl{
+}
 .beer-name-fl{}
 .abv-ibu-ebc-fl{}
 .description-fl{}
@@ -270,12 +339,25 @@ body {
 .hops-li-fl{}
 .malt-fl{}
 .malt-li-fl{}
-.render-recipes-container-fl{}
-.card-fl{}
+.render-recipes-container-fl{
+    justify-content: space-evenly;
+}
+.card-fl{
+    background-color: #2E9CCA;
+}
 .card-row-fl{}
 .card-img-container-fl{}
-.card-img-fl{}
+.card-img-fl{
+    margin-left: 12px;
+}
 .card-body-col-fl{}
 .card-body-fl{}
 .card-title-fl{}
 .card-link-button-fl{}
+
+.col-md-5.rec-beer-image {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
