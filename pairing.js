@@ -7,6 +7,9 @@ function renderFoodListBeer(beerID) {
             const hopArray = []
             const maltArray = []
             const foodParingArray = []
+            if (beer[0].image_url == null) {
+                beer[0].image_url = 'https://images.punkapi.com/v2/192.png'
+            }
             for (i = 0; i < beer[0].food_pairing.length; i++) {
                 foodParingArray[i] = beer[0].food_pairing[i]
                 console.log(foodParingArray)

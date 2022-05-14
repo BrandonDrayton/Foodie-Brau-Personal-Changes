@@ -74,8 +74,6 @@ document.addEventListener('click', function (e) {
         const beer = beers.find((beer) => {
             return beer.id == beerID
         })
-
-        console.log(beerID)
         saveToLikeList(beer)
     }
 })
@@ -101,7 +99,6 @@ document.addEventListener('click', function (e) {
         if (!excludeList.includes(removeRandom)) {
             excludeList.push(removeRandom)
         }
-        console.log(excludeList)
         excludeListJSON = JSON.stringify(excludeList)
         localStorage.setItem('excludeList', excludeListJSON)
         document.querySelector(`#beer-card-${removeRandom}`).remove()
