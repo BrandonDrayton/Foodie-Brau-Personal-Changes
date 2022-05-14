@@ -58,10 +58,10 @@ renderBeers(beerList)
         }
     })
 
-
+    
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('clear-from-liked')) {
-            localStorage.clear('beerList')
+            localStorage.removeItem('beerList')
         }
     })
 
