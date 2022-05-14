@@ -25,10 +25,7 @@ function renderBeers(beers) {
                 </div>
             </div>
         </div>
-
         `
-
-
     });
     const results = document.querySelector('.random-container');
     results.innerHTML = beerArray.join('');
@@ -37,6 +34,16 @@ let beerListJSON = localStorage.getItem('beerList')
 let beerList = JSON.parse(beerListJSON)
 renderBeers(beerList)
 
+document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('removeFromLike-x')) {
+        const removeFromLike = e.target.dataset.idx
+        beerList = beerList.filter(function (beer) {
+            if (removeFromLike == beer.id) {
+                return false
+            }
+            else {
+                return true
+            }
 
     document.addEventListener('click', function(e) {
         if (e.target.classList.contains('removeFromLike-x')) {
@@ -66,3 +73,8 @@ renderBeers(beerList)
     })
 
 
+document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('clear-from-liked')) {
+        localStorage.removeItem('beerList')
+    }
+})
