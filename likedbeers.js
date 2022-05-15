@@ -1,4 +1,4 @@
-function renderBeers(beers) {
+function renderLikedBeers(beers) {
     const beerArray = beers.map(function (currentBeer) {
         if (currentBeer.image_url == null) {
             currentBeer.image_url = 'https://images.punkapi.com/v2/192.png'
@@ -34,7 +34,7 @@ function renderBeers(beers) {
 }
 let beerListJSON = localStorage.getItem('beerList')
 let beerList = JSON.parse(beerListJSON)
-renderBeers(beerList)
+renderLikedBeers(beerList)
 
 document.addEventListener('click', function (e) {
     if (e.target.classList.contains('removeFromLike-x')) {

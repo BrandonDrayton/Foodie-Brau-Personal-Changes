@@ -62,10 +62,8 @@ function renderFoodListBeer(beerID) {
                 </div>
                 </div>
                 `
-
             renderRecipes(foodParingArray)
         })
-
 
 }
 function renderRecipes(foodArray) {
@@ -103,9 +101,31 @@ function renderRecipes(foodArray) {
     });
 }
 
-
-
 let excludedArray = JSON.parse(localStorage.getItem("excludeList")) ?? []
+let beerList = JSON.parse(localStorage.getItem("beerList"))
 const params = new URLSearchParams(window.location.search)
 const beerID = params.get("beerid") ?? getLeftOverId(excludedArray)
 renderFoodListBeer(beerID)
+console.log(beerID)
+
+document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('tmb-up')) {
+        const beerID = e.target.dataset.id
+        console.log(beerID)
+        fetch(`https://api.punkapi.com/v2/beers?ids=${beerID}`)
+            .then(res => res.json())
+            .then(beer => {
+                console.log(beer)
+                console.log(beerList)
+                if (beerList == null) {
+                    beerList = []
+                    beerList.push(beer[0])
+                }
+                else beerList.push(beer[0])
+                beerListJSON = JSON.stringify(beerList)
+                localStorage.setItem('beerList', beerListJSON)
+                console.log(beerList)
+
+            })
+    }
+})
