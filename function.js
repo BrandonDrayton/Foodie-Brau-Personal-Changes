@@ -67,3 +67,5 @@ searchForm.addEventListener('submit', function (e) {
             renderBeers(result)
         })
 })
+
+
