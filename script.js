@@ -15,12 +15,14 @@ function renderBeers(beers) {
                         <img src="${currentBeer.image_url}"class="img-fluid rounded-start" alt="...">
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 background-color:whitesmoke">
                     <div class="card-body card-body-landing">
+                    <div class="button-container">
                     <a href="./pairing.html?beerid=${currentBeer.id}" class="btn btn-primary pair-with" data-pairwith=${currentBeer.id}> Pairs With</a>
-                    <div class="thumbs-up-down">
+                    <div class="thumbs">    
                             <a href="javascript:void()" class="btn tmb-up" data-id=${currentBeer.id}>👍</a>  
                             <a href="#" class="btn tmb-down" data-idn=${currentBeer.id}>👎</a>
+                            </div>
                         </div>
                         <br>
                         <h5 class="card-title centered-title">${currentBeer.name}</h5>
@@ -72,6 +74,7 @@ document.addEventListener('click', function (e) {
         const beerID = e.target.dataset.id
         console.log(beerID)
         const beer = beers.find((beer) => {
+            console.log(beerID)
             return beer.id == beerID
         })
         saveToLikeList(beer)
