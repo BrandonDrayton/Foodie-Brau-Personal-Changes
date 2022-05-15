@@ -76,6 +76,7 @@ document.addEventListener('click', function (e) {
         const beer = beers.find((beer) => {
             console.log(beerID)
             return beer.id == beerID
+            
         })
         saveToLikeList(beer)
     }

@@ -8,7 +8,7 @@ function renderBeers(beers) {
             <div class="row g-0 card-entire-content">
                 <div class="col-md-4">
                     <div class="beer-card-image">
-                        <img src="${currentBeer.image_url}"class="img-fluid rounded-start" alt="...">
+                        <img src="${currentBeer.image_url}"class="img-fluid rounded-start" alt="...">\
                     </div>
                 </div>
                 <div class="col-md-8">
@@ -17,6 +17,7 @@ function renderBeers(beers) {
                     <div class="thumbs-up-down">
                     <a href="./pairing.html?beerid=${currentBeer.id}" class="btn btn-primary pair-with" data-pairwith=${currentBeer.id}> Pairs With</a>
                         <a href="#" class="btn removeFromLike-x" data-idx="${currentBeer.id}">❌</a>
+
                         </div>
                         <h5 class="card-title centered-title">${currentBeer.name}</h5>
                         
@@ -35,16 +36,7 @@ let beerListJSON = localStorage.getItem('beerList')
 let beerList = JSON.parse(beerListJSON)
 renderBeers(beerList)
 
-document.addEventListener('click', function (e) {
-    if (e.target.classList.contains('removeFromLike-x')) {
-        const removeFromLike = e.target.dataset.idx
-        beerList = beerList.filter(function (beer) {
-            if (removeFromLike == beer.id) {
-                return false
-            }
-            else {
-                return true
-            }
+
 
         })
         beerListJSON = JSON.stringify(beerList)
@@ -60,3 +52,4 @@ document.addEventListener('click', function (e) {
         localStorage.removeItem('beerList')
     }
 })
+
