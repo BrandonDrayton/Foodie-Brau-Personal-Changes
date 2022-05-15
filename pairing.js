@@ -16,12 +16,12 @@ function renderFoodListBeer(beerID) {
             }
             for (i = 0; i < beer[0].ingredients.malt.length; i++) {
                 if (!maltArray.includes(beer[0].ingredients.malt[i].name)) {
-                    maltArray.push(`<li class="malt-li-fl">${beer[0].ingredients.malt[i].name}</li>`)
+                    maltArray.push(`<li class="malt-li-fl">${beer[0].ingredients.malt[i].name} ${beer[0].ingredients.malt[i].amount.value} ${beer[0].ingredients.malt[i].amount.unit}</li>`)
                 }
             }
             for (i = 0; i < beer[0].ingredients.hops.length; i++) {
                 if (!hopArray.includes(beer[0].ingredients.hops[i].name)) {
-                    hopArray.push(`<li class="hops-li-fl">${beer[0].ingredients.hops[i].name}</li>`)
+                    hopArray.push(`<li class="hops-li-fl">${beer[0].ingredients.hops[i].name} ${beer[0].ingredients.hops[i].amount.value} ${beer[0].ingredients.hops[i].amount.unit}</li>`)
                 }
             }
             if (beer[0].image_url == null) {
@@ -36,32 +36,33 @@ function renderFoodListBeer(beerID) {
                     <img src="${beer[0].image_url}" class="img-fluid rounded-start beer-image-fl" alt="...">
                   </div>
                   <div class="col-md-7">
-                    <div class="card-body clicked-beer-details-fl">
-                    <h5 class="card-title beer-name-fl">${beer[0].name}</h5>
-                    <div class="thumbs-up-down">
+                  <div class="card-body clicked-beer-details-fl">
+                  <div class="thumbs-up-down-2">
+                  <h5 class="card-title beer-name-fl">${beer[0].name}</h5>
                             <a href="#" class="btn tmb-up" data-id=${beer[0].id}>👍</a>  
                             <a href="#" class="btn tmb-down" data-idn=${beer[0].id}>👎</a>
-                    </div>
-                      <p class="card-text">
-                      <div class="abv-ibu-ebc-fl">ABV:${beer[0].abv}  <br> IBU:${beer[0].ibu} <br>  EBC/Color:${beer[0].ebc} <br>  First Brewed:${beer[0].first_brewed} </div>
-                      <br>
-            <div class="description-fl">${beer[0].description}
-            <br>
-            <div class="hops-malts-fl">
-                <ul class="hops-fl">Hops -
+                        </div>
+                  <p class="card-text">
+                  <div class="abv-ibu-ebc-fl">ABV: ${beer[0].abv}  <br> IBU: ${beer[0].ibu} <br>  EBC/Color: ${beer[0].ebc} <br>  First Brewed: ${beer[0].first_brewed} </div>
+                  <br>
+                  <div class="description-fl">${beer[0].description}
+                  <br>
+                  <div class="hops-malts-fl">
+                <ul class="hops-fl">Hops added to brew kettle
                 ${hopArray.join('')}
                 </ul>
-                <ul class="malt-fl">Malt -
+                <ul class="malt-fl">Malt
                 ${maltArray.join('')}
                 </ul>
-            </div>
-        </div>
-                      </p>
-                    </div>
-                  </div>
                 </div>
-              </div>
-        `
+                </div>
+                </p>
+                </div>
+                </div>
+                </div>
+                </div>
+                `
+
             renderRecipes(foodParingArray)
         })
 
@@ -79,17 +80,17 @@ function renderRecipes(foodArray) {
                     recipeCardArray.push(
                         `<div class="card-fl mb-3" style="max-width: 540px;">
                             <div class="card-row-fl row g-0">
-                                <div class="card-body-col-fl col-md-8">
-                                    <div class="card-body-fl card-body">
-                                        <h5 class="card-title-fl card-title">${food.hits[i].recipe.label}</h5>
-                                        <a target="_blank" class="card-link-button-fl btn btn-primary btn-large" href="${food.hits[i].recipe.url}" role="button">Get Recipe</a>
-                                    </div>
-                                </div>
-                                <div class="card-img-container-fl col-md-4">
-                                    <img src="${food.hits[i].recipe.image}" class="card-img-fl img-fluid rounded-start" alt="...">
-                                </div>
+                            <div class="card-body-col-fl col-md-8">
+                            <div class="card-body-fl card-body">
+                            <h5 class="card-title-fl card-title">${food.hits[i].recipe.label}</h5>
+                            <a target="_blank" class="card-link-button-fl btn btn-primary btn-large" href="${food.hits[i].recipe.url}" role="button">Get Recipe</a>
                             </div>
-                        </div>`)
+                            </div>
+                            <div class="card-img-container-fl col-md-4">
+                            <img src="${food.hits[i].recipe.image}" class="card-img-fl img-fluid rounded-start" alt="...">
+                            </div>
+                            </div>
+                            </div>`)
                 }
                 return recipeCardArray
             })
@@ -108,8 +109,3 @@ let excludedArray = JSON.parse(localStorage.getItem("excludeList")) ?? []
 const params = new URLSearchParams(window.location.search)
 const beerID = params.get("beerid") ?? getLeftOverId(excludedArray)
 renderFoodListBeer(beerID)
-
-
-
-
-

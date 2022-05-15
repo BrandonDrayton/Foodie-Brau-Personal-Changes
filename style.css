@@ -63,6 +63,7 @@ body {
     justify-content: space-between;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 5px 5px 0 #000;
     padding-bottom: .6em;
+    font-family: 'Gloria Hallelujah', cursive;
 }
 
 .your-list {
@@ -84,7 +85,7 @@ body {
 
 /* Might delete 87-97, need to talk with brandon :first */
 
- /* @media screen and (min-width: 776px) and (max-width: 1090px) {
+/* @media screen and (min-width: 776px) and (max-width: 1090px) {
     .foodie-brau {
         font-size: 2.2em
     }
@@ -128,6 +129,7 @@ body {
         text-align: center;
     }
 }
+
 /* line 130 closing tag for media q */
 
 /* css tags for intro and form elements */
@@ -135,6 +137,8 @@ body {
 .introduction-div {
     display: flex;
     justify-content: center;
+    max-width: 77%;
+    margin: auto;
 }
 
 .intro {
@@ -151,7 +155,7 @@ body {
     flex-direction: row-reverse;
     margin-top: 3em;
     margin-bottom: 3em;
-} 
+}
 
 
 .select-form {}
@@ -164,19 +168,20 @@ body {
 
 
 .light {
-    background-color: rgb(246, 244, 99);
+    color: rgb(246, 244, 99);
+    background-color: rgb(22, 123, 169);
 }
 
 .copper {
-    background-color: rgb(188, 106, 40);
+    color: rgb(188, 106, 40);
 }
 
 .amber {
-    background-color: rgb(104, 32, 14);
+    color: rgb(104, 32, 14);
 }
 
 .dark {
-    background-color: rgb(39, 4, 2);
+    color: rgb(75, 9, 6);
 }
 
 
@@ -217,10 +222,6 @@ body {
 @media screen and (min-width: 50rem) {
     #main {
         height: fit-content;
-        border: 3px;
-        border-style: solid;
-        border-color: #AAABB8;
-        box-shadow: 2px 3px 5px 10px #464866;
         margin-left: 80px;
         margin-right: 80px;
         margin-bottom: 150px;
@@ -229,8 +230,13 @@ body {
 
     .thumbs-up-down {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
         margin-top: -38px;
+    }
+
+    .thumbs-up-down-2 {
+        display: flex;
+        justify-content: flex-end;
     }
 
     .beer-card {
@@ -244,71 +250,75 @@ body {
         min-height: 225px;
         height: 100%;
     }
- /* }    testing media q */
-.btn-primary {
-    color: beige;
-    font-family: 'Gloria Hallelujah', cursive;
-    background-color: #464866;
-    border-color: #464866;
-    width: fit-content;
-}
+
+    /* }    testing media q */
+    .btn-primary {
+        color: beige;
+        font-family: 'Gloria Hallelujah', cursive;
+        background-color: #464866;
+        border-color: #464866;
+        width: fit-content;
+    }
 
 
-.card-body-landing {
-    height: 14em;
-    overflow: scroll;
-    overflow-x: hidden;
-}
+    .card-body-landing {
+        height: 14em;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
 
-.beer-card-image {
-    height: 100%;
-    padding-top: 10px;
+    .beer-card-image {
+        height: 100%;
+        padding-top: 10px;
 
-}
+    }
 
-.beer-card-image img{
-    max-height: 225px;
-    object-fit: contain;
-    width: 100%;
-    height: 100%;
-}
+    .beer-card-image img {
+        max-height: 225px;
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
 
-.random-container {
-    display: flex;
-    justify-content: space-evenly;
-    max-width: 1200px;
-    margin: 0 auto;
-}
+    .random-container {
+        display: flex;
+        justify-content: space-evenly;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
-.random-pull {
-    text-align: center;
-    color: #AAABB8;
-    font-family: 'Gloria Hallelujah', cursive;
-    font-size: 27px;
-}
-.up-and-down-help {
-    text-align: center;
-    color: #AAABB8;
-    font-family: 'Gloria Hallelujah', cursive;
-    font-size: 27px;
-}
+    .random-pull {
+        text-align: center;
+        color: #AAABB8;
+        font-family: 'Gloria Hallelujah', cursive;
+        font-size: 27px;
+        text-decoration: underline;
+    }
 
-.centered-title {
-    display: flex;
-    justify-content: center;
-    color: #000;
-}
+    .up-and-down-help {
+        text-align: center;
+        color: #AAABB8;
+        font-family: 'Gloria Hallelujah', cursive;
+        font-size: 27px;
+    }
 
-.tmb-up {
-    display: flex;
-}
+    .centered-title {
+        display: flex;
+        justify-content: center;
+        color: #000;
+    }
 
-.tmb-down {
-    display: flex;
-}
-p.card-text {
-    color: black;
-}
+    .tmb-up {
+        display: flex;
+    }
+
+    .tmb-down {
+        display: flex;
+    }
+
+    p.card-text {
+        color: black;
+    }
 
 
 
@@ -316,48 +326,151 @@ p.card-text {
 }
 
 /* pairing css selector this is all for the pairings page, all the media q seems to function fine */
-.clicked-beer-fl{
+.clicked-beer-fl {
     display: flex;
     justify-content: center;
     margin-top: 30px;
 }
-.beer-card-rec{
-    width: 40rem;
+
+.beer-card-rec {
+    width: 60rem;
     align-items: center;
     background-color: #2E9CCA;
     flex-direction: row;
 }
-.beer-image-fl{
-    width: 8em;
+
+.beer-image-fl {
+    width: 11em;
+    object-fit: contain
 }
-.clicked-beer-details-fl{
-}
-.beer-name-fl{}
-.abv-ibu-ebc-fl{}
-.description-fl{}
-.hops-malts-fl{}
-.hops-li-fl{}
-.malt-fl{}
-.malt-li-fl{}
-.render-recipes-container-fl{
+
+.clicked-beer-details-fl {}
+
+.beer-name-fl {}
+
+.abv-ibu-ebc-fl {}
+
+.description-fl {}
+
+.hops-malts-fl {}
+
+.hops-li-fl {}
+
+.malt-fl {}
+
+.malt-li-fl {}
+
+.render-recipes-container-fl {
     justify-content: space-evenly;
 }
-.card-fl{
+
+.card-fl {
     background-color: #2E9CCA;
 }
-.card-row-fl{}
-.card-img-container-fl{}
-.card-img-fl{
+
+.card-row-fl {}
+
+.card-img-container-fl {}
+
+.card-img-fl {
     margin-left: 12px;
 }
-.card-body-col-fl{}
-.card-body-fl{}
-.card-title-fl{}
-.card-link-button-fl{}
+
+.card-body-col-fl {}
+
+.card-body-fl {}
+
+.card-title-fl {}
+
+.card-link-button-fl {}
 
 .col-md-5.rec-beer-image {
     display: flex;
     justify-content: center;
     padding-top: 10px;
     padding-bottom: 15px;
+}
+
+.search-bar {
+    height: 50px;
+    width: 50px;
+    border-style: none;
+    padding: 10px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    outline: none;
+    border-radius: 25px;
+    transition: all .5s ease-in-out;
+    background-color: #2E9CCA;
+    padding-right: 40px;
+    color: rgb(255, 255, 255);
+    font-family: 'Gloria Hallelujah', cursive;
+
+}
+
+.search-bar::placeholder {
+    color: rgba(255, 255, 255, .5);
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: 100;
+    font-family: 'Gloria Hallelujah', cursive;
+}
+
+.search-button {
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    right: 0px;
+    color: #ffffff;
+    background-color: transparent;
+    pointer-events: painted;
+    background-image: url(https://cdn2.hubspot.net/hubfs/4004166/bioticresearch_website_assets/images/search_icon.png)
+}
+
+.search-button:focus~.search-bar {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+.search-bar:focus {
+    width: 300px;
+    border-radius: 0px;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(255, 255, 255, .5);
+    transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+.search-bar-div {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.col-md-8 {
+    background-color: #e9ecef
+}
+
+.clicked-beer-details-fl {
+    background-color: #e9ecef
+}
+
+.card-link-button-fl {
+    background-color: #2E9CCA
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.thumbs {
+    display: flex;
+    justify-content: flex-end;
 }
