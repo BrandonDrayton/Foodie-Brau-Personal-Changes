@@ -27,7 +27,7 @@ function renderFoodListBeer(beerID) {
             if (beer[0].image_url == null) {
                 beer[0].image_url = 'https://images.punkapi.com/v2/192.png'
             }
-            
+
             document.querySelector('.clicked-beer-fl').innerHTML =
                 `
                 <div class="card mb-3 beer-card-rec" style="max-width: 540px;">
@@ -37,7 +37,11 @@ function renderFoodListBeer(beerID) {
                   </div>
                   <div class="col-md-7">
                     <div class="card-body clicked-beer-details-fl">
-                      <h5 class="card-title beer-name-fl">${beer[0].name}</h5>
+                    <h5 class="card-title beer-name-fl">${beer[0].name}</h5>
+                    <div class="thumbs-up-down">
+                            <a href="#" class="btn tmb-up" data-id=${beer[0].id}>👍</a>  
+                            <a href="#" class="btn tmb-down" data-idn=${beer[0].id}>👎</a>
+                    </div>
                       <p class="card-text">
                       <div class="abv-ibu-ebc-fl">ABV:${beer[0].abv}  <br> IBU:${beer[0].ibu} <br>  EBC/Color:${beer[0].ebc} <br>  First Brewed:${beer[0].first_brewed} </div>
                       <br>
@@ -58,7 +62,6 @@ function renderFoodListBeer(beerID) {
                 </div>
               </div>
         `
-        
             renderRecipes(foodParingArray)
         })
 

@@ -72,7 +72,9 @@ document.addEventListener('click', function (e) {
         const beerID = e.target.dataset.id
         console.log(beerID)
         const beer = beers.find((beer) => {
+            // console.log(`${beer[0][id]}`)
             return beer.id == beerID
+            
         })
         saveToLikeList(beer)
     }
