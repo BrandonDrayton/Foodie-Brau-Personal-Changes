@@ -39,8 +39,10 @@ function renderFoodListBeer(beerID) {
                   <div class="card-body clicked-beer-details-fl">
                   <div class="thumbs-up-down-2">
                   <h5 class="card-title beer-name-fl">${beer[0].name}</h5>
+                  <div class="card-thumbs-fl">
                             <a href="#" class="btn tmb-up" data-id=${beer[0].id}>👍</a>  
                             <a href="#" class="btn tmb-down" data-idn=${beer[0].id}>👎</a>
+                            </div>
                         </div>
                   <p class="card-text">
                   <div class="abv-ibu-ebc-fl">ABV: ${beer[0].abv}%  <br> IBU: ${beer[0].ibu} <br>  EBC/Color: ${beer[0].ebc} <br>  First Brewed: ${beer[0].first_brewed} </div>
@@ -82,9 +84,6 @@ function renderRecipes(foodArray) {
                             <div class="card-row-fl row g-0">
                             <div class="card-body-container card-body-col-fl col-md-8">
                             <div class="card-body-fl card-body">
-                            <div class="card-img-container-fl col-md-4">
-                            <img src="${food.hits[i].recipe.image}" class="card-img-fl img-fluid rounded-start" alt="...">
-                            </div>
                             <h5 class="card-title-fl card-title">${food.hits[i].recipe.label}</h5>
                             <div class="card-img-container-fl col-md-4">
                             <img src="${food.hits[i].recipe.image}" class="recipe-image card-img-fl img-fluid rounded-start" alt="...">
