@@ -110,16 +110,6 @@ body {
     margin-bottom: 3em;
 }
 
-
-.select-form {}
-
-#abv-select {}
-
-#ibu-select {}
-
-#color-select {}
-
-
 .light {
     color: rgb(246, 244, 99);
 }
@@ -159,20 +149,6 @@ body {
     height: 100%;
 }
 
-.beer-name-fl {}
-
-.abv-ibu-ebc-fl {}
-
-.description-fl {}
-
-.hops-malts-fl {}
-
-.hops-li-fl {}
-
-.malt-fl {}
-
-.malt-li-fl {}
-
 .render-recipes-container-fl {
     justify-content: space-evenly;
 }
@@ -194,28 +170,23 @@ body {
     align-items: center;
 }
 
-.card-img-container-fl {}
-
 .card-img-fl {
     margin-left: 12px;
 }
-
-.card-body-col-fl {}
 
 .card-body-fl {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 
 .card-title-fl {
     text-align: center;
     font-size: 1.5em;
     font-family: 'Gloria Hallelujah';
+    flex-grow: 1;
 }
-
-
-.card-link-button-fl {}
 
 .card-img-container-fl {
     width: 100%;
@@ -322,8 +293,6 @@ body {
     --accentBg: #bae1ff;
 }
 
-
-
 select {
     font: 400 12px/1.3 sans-serif;
     -webkit-appearance: none;
@@ -344,7 +313,6 @@ select {
     background-position: right 20px center, right bottom, right bottom, right bottom;
 }
 
-
 select:hover {
     background-image: linear-gradient(var(--accentFg), var(--accentFg)),
         linear-gradient(-135deg, transparent 50%, var(--accentFg) 50%),
@@ -354,9 +322,6 @@ select:hover {
     border-color: var(--accentFg);
     background-color: var(--accentFg);
 }
-
-.submit-button {}
-
 
 @media screen and (max-width: 775px) {
     .page-header {
@@ -418,6 +383,7 @@ select:hover {
     .recipe-image {
         height: 13em;
         margin-bottom: 1em;
+        object-fit: contain;
     }
 
     .card-img-container-fl {
@@ -425,11 +391,13 @@ select:hover {
         justify-content: center;
         flex-direction: column;
     }
+
+    .card-body-fl {
+        padding-right: 0;
+    }
 }
 
 /* changed min rem from 50 down to 5, bad idea, leave it at 50*/
-
-
 @media screen and (min-width: 10rem) {
     #main {
         height: fit-content;
@@ -440,11 +408,12 @@ select:hover {
         display: flex;
         justify-content: space-between;
         margin-top: -38px;
+        padding-bottom: 1em;
     }
 
     .thumbs-up-down-2 {
         display: flex;
-        justify-content: flex-end;
+        justify-content: space-between;
     }
 
     .beer-card {
@@ -455,6 +424,10 @@ select:hover {
         font-family: 'Gloria Hallelujah', cursive;
         padding: inherit;
         color: white;
+    }
+
+    .card-thumbs-fl {
+        display: flex;
     }
 
     .card-entire-content {
@@ -470,7 +443,6 @@ select:hover {
         border-color: #464866;
         width: fit-content;
     }
-
 
     .card-body-landing {
         height: 14em;
@@ -540,8 +512,6 @@ select:hover {
 
 }
 
-
-
 @media screen and (min-width: 992px) {
     .beer-card {
         max-width: 550px
@@ -578,25 +548,25 @@ select:hover {
     }
 }
 
-
-}
-
-.hops{
+.hops {
     font-size: 19px;
     text-decoration: underline;
     margin-left: -20px;
     margin-top: 10px;
     margin-bottom: -20px;
 }
-.malt{
+
+.malt {
     font-size: 19px;
     text-decoration: underline;
     margin-left: -13px;
     margin-bottom: 7px;
 }
-.beer-card-rec{
+
+.beer-card-rec {
     color: black;
-        font-family: 'Gloria Hallelujah';
+    font-family: 'Gloria Hallelujah';
+}
 
 @media screen and (max-width: 1274px) {
     .foodie-brau a {

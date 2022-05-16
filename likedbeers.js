@@ -17,12 +17,9 @@ function renderLikedBeers(beers) {
                     <div class="thumbs-up-down">
                     <a href="./pairing.html?beerid=${currentBeer.id}" class="btn btn-primary pair-with" data-pairwith=${currentBeer.id}> Pairs With</a>
                         <a href="#" class="btn removeFromLike-x" data-idx="${currentBeer.id}">❌</a>
-
                         </div>
                         <h5 class="card-title centered-title">${currentBeer.name}</h5>
-                        
                         <p class="card-text">${currentBeer.description}</p>
-                    
                     </div>
                 </div>
             </div>
