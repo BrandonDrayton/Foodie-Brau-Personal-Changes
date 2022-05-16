@@ -48,7 +48,7 @@ function renderFoodListBeer(beerID) {
                   <div class="description-fl">${beer[0].description}
                   <br>
                   <div class="hops-malts-fl">
-                <ul class="hops-fl">Hops added to brew kettle
+                <ul class="hops-fl"><u>Hops added to brew kettle</u>
                 ${hopArray.join('')}
                 </ul>
                 <ul class="malt-fl">Malt
@@ -78,14 +78,14 @@ function renderRecipes(foodArray) {
                     recipeCardArray.push(
                         `<div class="card-fl mb-3" style="max-width: 540px;">
                             <div class="card-row-fl row g-0">
-                            <div class="card-body-col-fl col-md-8">
+                            <div class="card-body-container card-body-col-fl col-md-8">
                             <div class="card-body-fl card-body">
                             <h5 class="card-title-fl card-title">${food.hits[i].recipe.label}</h5>
+                            <div class="card-img-container-fl col-md-4">
+                            <img src="${food.hits[i].recipe.image}" class="recipe-image card-img-fl img-fluid rounded-start" alt="...">
+                            </div>
                             <a target="_blank" class="card-link-button-fl btn btn-primary btn-large" href="${food.hits[i].recipe.url}" role="button">Get Recipe</a>
                             </div>
-                            </div>
-                            <div class="card-img-container-fl col-md-4">
-                            <img src="${food.hits[i].recipe.image}" class="card-img-fl img-fluid rounded-start" alt="...">
                             </div>
                             </div>
                             </div>`)
@@ -127,5 +127,18 @@ document.addEventListener('click', function (e) {
                 console.log(beerList)
 
             })
+    }
+})
+
+document.addEventListener('click', function (e) {
+    if (e.target.classList.contains('tmb-down')) {
+        const removeRandom = e.target.dataset.idn
+        console.log(removeRandom)
+        if (!excludeList.includes(removeRandom)) {
+            excludeList.push(removeRandom)
+        }
+        excludeListJSON = JSON.stringify(excludeList)
+        localStorage.setItem('excludeList', excludeListJSON)
+        window.location.reload(renderFoodListBeer(beerID))
     }
 })

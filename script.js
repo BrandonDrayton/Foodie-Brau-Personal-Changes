@@ -76,10 +76,10 @@ function renderBeers(beers) {
             currentBeer.image_url = 'https://images.punkapi.com/v2/192.png'
         }
         return `
-        <div class="card mb-3 beer-card" style="max-width: 540px;" id="beer-card-${currentBeer.id}">
+        <div class="card mb-3 beer-card" style="max-width: 540px; background-color: #2E9CCA" id="beer-card-${currentBeer.id}">
             <div class="row g-0 card-entire-content">
                 <div class="col-md-4">
-                    <div class="beer-card-image" >
+                    <div class="beer-card-image" id="beer-card-img">
                         <img src="${currentBeer.image_url}"class="img-fluid rounded-start" alt="...">
                     </div>
                 </div>
