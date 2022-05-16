@@ -51,7 +51,7 @@ document.addEventListener('click', function (e) {
         })
         beerListJSON = JSON.stringify(beerList)
         localStorage.setItem('beerList', beerListJSON)
-        renderBeers(beerList)
+        renderLikedBeers(beerList)
     }
 })
 document.addEventListener('click', function (e) {

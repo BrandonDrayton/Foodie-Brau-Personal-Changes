@@ -415,7 +415,7 @@ select:hover {
 
 /* changed min rem from 50 down to 5, bad idea, leave it at 50*/
 
-@media screen and (min-width: 50rem) {
+@media screen and (min-width: 5rem) {
     #main {
         height: fit-content;
         margin-left: 80px;
@@ -439,7 +439,8 @@ select:hover {
         background-color: #2E9CCA;
         min-height: 250px;
         padding-left: 0;
-        color: white;
+        color: #AAABB8;
+        font-family: 'Gloria Hallelujah', cursive;
     }
 
     .card-entire-content {
@@ -519,4 +520,22 @@ select:hover {
 
 
 
+}
+
+.hops{
+    font-size: 19px;
+    text-decoration: underline;
+    margin-left: -20px;
+    margin-top: 10px;
+    margin-bottom: -20px;
+}
+.malt{
+    font-size: 19px;
+    text-decoration: underline;
+    margin-left: -13px;
+    margin-bottom: 7px;
+}
+.beer-card-rec{
+    color: black;
+        font-family: 'Gloria Hallelujah';
 }
