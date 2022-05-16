@@ -39,6 +39,7 @@ renderLikedBeers(beerList)
 document.addEventListener('click', function (e) {
     if (e.target.classList.contains('removeFromLike-x')) {
         const removeFromLike = e.target.dataset.idx
+        console.log(removeFromLike)
         beerList = beerList.filter(function (beer) {
             if (removeFromLike == beer.id) {
                 return false
@@ -46,8 +47,6 @@ document.addEventListener('click', function (e) {
             else {
                 return true
             }
-
-
         })
         beerListJSON = JSON.stringify(beerList)
         localStorage.setItem('beerList', beerListJSON)

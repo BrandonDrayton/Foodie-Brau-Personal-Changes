@@ -83,21 +83,6 @@ body {
 
 /* ending of page header */
 
-/* Might delete 87-97, need to talk with brandon :first */
-
-/* @media screen and (min-width: 776px) and (max-width: 1090px) {
-    .foodie-brau {
-        font-size: 2.2em
-    }
-
-    .foodie-brau a {
-        text-align: center;
-        text-justify: auto;
-        white-space: nowrap
-    }
-
-}  */
-
 /* line 130 closing tag for media q */
 
 /* css tags for intro and form elements */
@@ -151,41 +136,6 @@ body {
     color: rgb(75, 9, 6);
 }
 
-
-/* 
-.random-container {
-    display: flex;
-    justify-content: space-evenly;
-    max-width: 1200px;
-    margin: 0 auto;
-
-
-}
-
-.random-pull {
-    text-align: center;
-    color: #AAABB8;
-}
-
-
-
-
-.centered-title {
-    display: flex;
-    justify-content: center;
-}
-
-.tmb-up {
-    display: flex;
-}
-
-.tmb-down {
-    display: flex;
-} */
-
-
-
-
 /* pairing css selector this is all for the pairings page, all the media q seems to function fine */
 .clicked-beer-fl {
     display: flex;
@@ -205,7 +155,9 @@ body {
     object-fit: contain
 }
 
-.clicked-beer-details-fl {}
+.clicked-beer-details-fl {
+    height: 100%;
+}
 
 .beer-name-fl {}
 
@@ -229,7 +181,18 @@ body {
     background-color: #2E9CCA;
 }
 
-.card-row-fl {}
+.card-body-container {
+    height: -webkit-fill-available;
+}
+
+.card-row-fl {
+    background-color: #ff9200f2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
 
 .card-img-container-fl {}
 
@@ -239,11 +202,25 @@ body {
 
 .card-body-col-fl {}
 
-.card-body-fl {}
+.card-body-fl {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-.card-title-fl {}
+.card-title-fl {
+    text-align: center;
+    font-size: 1.5em;
+    font-family: 'Gloria Hallelujah';
+}
+
 
 .card-link-button-fl {}
+
+.card-img-container-fl {
+    width: 100%;
+    padding-bottom: 1em;
+}
 
 .col-md-5.rec-beer-image {
     display: flex;
@@ -386,6 +363,32 @@ select:hover {
         max-width: 100%
     }
 
+    select {
+        display: none;
+    }
+
+    .introduction-div {
+        max-width: 114%;
+    }
+
+    .intro {
+        font-size: 16px;
+        width: 100%;
+    }
+
+    .submit-button {
+        display: none
+    }
+
+    .nav-links li {
+        margin: 0;
+    }
+
+    #beer-card-img {
+        justify-content: center;
+        display: flex;
+    }
+
     .foodie-brau {
         font-size: 1.5em
     }
@@ -411,17 +414,26 @@ select:hover {
     .your-list a {
         text-align: center;
     }
+
+    .recipe-image {
+        height: 13em;
+        margin-bottom: 1em;
+    }
+
+    .card-img-container-fl {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 }
 
 /* changed min rem from 50 down to 5, bad idea, leave it at 50*/
 
-@media screen and (min-width: 5rem) {
+
+@media screen and (min-width: 10rem) {
     #main {
         height: fit-content;
-        margin-left: 80px;
-        margin-right: 80px;
-        margin-bottom: 150px;
-        padding-bottom: 5em;
+        padding-bottom: 1em;
     }
 
     .thumbs-up-down {
@@ -441,6 +453,8 @@ select:hover {
         padding-left: 0;
         color: #AAABB8;
         font-family: 'Gloria Hallelujah', cursive;
+        padding: inherit;
+        color: white;
     }
 
     .card-entire-content {
@@ -516,8 +530,53 @@ select:hover {
     p.card-text {
         color: black;
     }
+}
+
+@media (min-width: 768px) {
+    .beer-card {
+        max-width: 350px;
+        background-color: #2E9CCA
+    }
+
+}
 
 
+
+@media screen and (min-width: 992px) {
+    .beer-card {
+        max-width: 550px
+    }
+}
+
+@media screen and (max-width: 970px) {
+    .foodie-brau a {
+        text-align: center;
+        text-justify: auto;
+        white-space: nowrap;
+        font-size: .85em;
+    }
+
+    .page-header {
+        max-width: 100%
+    }
+}
+
+@media screen and (max-width: 1055px) {
+    .foodie-brau a {
+        text-align: center;
+        text-justify: auto;
+        white-space: nowrap;
+        font-size: .85em;
+    }
+}
+
+@media screen and (max-width: 1120px) {
+    .foodie-brau a {
+        text-align: center;
+        text-justify: auto;
+        white-space: nowrap
+    }
+}
 
 
 }
@@ -538,4 +597,12 @@ select:hover {
 .beer-card-rec{
     color: black;
         font-family: 'Gloria Hallelujah';
+
+@media screen and (max-width: 1274px) {
+    .foodie-brau a {
+        text-align: center;
+        text-justify: auto;
+        white-space: nowrap
+    }
+
 }
