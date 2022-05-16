@@ -43,15 +43,17 @@ function renderFoodListBeer(beerID) {
                             <a href="#" class="btn tmb-down" data-idn=${beer[0].id}>👎</a>
                         </div>
                   <p class="card-text">
-                  <div class="abv-ibu-ebc-fl">ABV: ${beer[0].abv}  <br> IBU: ${beer[0].ibu} <br>  EBC/Color: ${beer[0].ebc} <br>  First Brewed: ${beer[0].first_brewed} </div>
+                  <div class="abv-ibu-ebc-fl">ABV: ${beer[0].abv}%  <br> IBU: ${beer[0].ibu} <br>  EBC/Color: ${beer[0].ebc} <br>  First Brewed: ${beer[0].first_brewed} </div>
                   <br>
                   <div class="description-fl">${beer[0].description}
                   <br>
                   <div class="hops-malts-fl">
-                <ul class="hops-fl"><u>Hops added to brew kettle</u>
+
+                <ul class="hops-fl"><div class="hops">Hops added to brew kettle:</div>
+                <br>
                 ${hopArray.join('')}
                 </ul>
-                <ul class="malt-fl">Malt
+                <ul class="malt-fl"><div class = "malt">Malt:</div>
                 ${maltArray.join('')}
                 </ul>
                 </div>
@@ -80,6 +82,9 @@ function renderRecipes(foodArray) {
                             <div class="card-row-fl row g-0">
                             <div class="card-body-container card-body-col-fl col-md-8">
                             <div class="card-body-fl card-body">
+                            <div class="card-img-container-fl col-md-4">
+                            <img src="${food.hits[i].recipe.image}" class="card-img-fl img-fluid rounded-start" alt="...">
+                            </div>
                             <h5 class="card-title-fl card-title">${food.hits[i].recipe.label}</h5>
                             <div class="card-img-container-fl col-md-4">
                             <img src="${food.hits[i].recipe.image}" class="recipe-image card-img-fl img-fluid rounded-start" alt="...">

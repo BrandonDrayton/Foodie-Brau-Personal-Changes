@@ -429,6 +429,7 @@ select:hover {
 
 /* changed min rem from 50 down to 5, bad idea, leave it at 50*/
 
+
 @media screen and (min-width: 10rem) {
     #main {
         height: fit-content;
@@ -449,6 +450,9 @@ select:hover {
     .beer-card {
         background-color: #2E9CCA;
         min-height: 250px;
+        padding-left: 0;
+        color: #AAABB8;
+        font-family: 'Gloria Hallelujah', cursive;
         padding: inherit;
         color: white;
     }
@@ -574,10 +578,31 @@ select:hover {
     }
 }
 
+
+}
+
+.hops{
+    font-size: 19px;
+    text-decoration: underline;
+    margin-left: -20px;
+    margin-top: 10px;
+    margin-bottom: -20px;
+}
+.malt{
+    font-size: 19px;
+    text-decoration: underline;
+    margin-left: -13px;
+    margin-bottom: 7px;
+}
+.beer-card-rec{
+    color: black;
+        font-family: 'Gloria Hallelujah';
+
 @media screen and (max-width: 1274px) {
     .foodie-brau a {
         text-align: center;
         text-justify: auto;
         white-space: nowrap
     }
+
 }
